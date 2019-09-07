@@ -1,24 +1,7 @@
-import { Complex, Scene } from 'complex-engine';
+import { Engine } from 'complex-engine';
+import MyScene from './Scene';
 
-class MyScene extends Scene {
-    constructor() {
-        super('MyScene');
-    }
-
-    load() {
-        // Setup your environment here
-        // add entities, systems and managers to the this.world instance
-    }
-}
-
-Complex
+Engine
     .getInstance()
-    .loadScene(new MyScene());
-
-function animate() {
-    Complex.getInstance().update();
-    requestAnimationFrame(animate);
-}
-
-animate();
-
+    .useScene(new MyScene())
+    .start();

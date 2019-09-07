@@ -11,12 +11,11 @@ export default {
     },
     plugins: [
         babel({
-            exclude: 'node_modules/**'
+            //exclude: 'node_modules/**'
+            include: 'node_modules/complex-engine'
         }),
         resolve({
-            mainFields: ['module', 'main'],
             browser: true,
-
         }),
     ]
 }
