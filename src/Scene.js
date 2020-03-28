@@ -10,6 +10,6 @@ export default class MyScene extends Scene {
         // Setup your environment here
         // add entities, systems and managers to the this.world instance
 
-        this.world.addVoidSystem(new RenderSystem());
+        this.world.addSystem(new RenderSystem());
     }
 }
