@@ -1,5 +1,6 @@
 import { Scene } from 'complex-engine';
 import RenderSystem from './RenderSystem';
+import { ScriptComponent, ScriptSystem } from 'complex-scripting';
 
 export default class MyScene extends Scene {
     constructor() {
@@ -10,6 +11,10 @@ export default class MyScene extends Scene {
         // Setup your environment here
         // add entities, systems and managers to the this.world instance
 
-        this.world.addSystem(new RenderSystem());
+        this.world.addEntitySystem(new RenderSystem());
+
+        this.world.createEntity([
+            new ScriptComponent(new MyScript()),
+        ]);
     }
 }
